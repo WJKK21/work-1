@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="slide" class="img-box" val="1" max="3">
+    <img id="img1" src="../site_template/home/main1.jpg" alt="">
+    <img id="img2" src="../site_template/home/main2.jpg" alt="">
+    <img id="img3" src="../site_template/home/main3.jpg" alt="">
+    <img id="img1" src="../site_template/home/main1.jpg" alt="">
+</div>
+
+<script>
+   const container = document.querySelector('.img-box'),
+    slides = document.querySelectorAll('img'),
+    slidecounter = slides.length;
+let currentIndex = 0;
+
+
+var lele = 0;
+var i = 0;
+function moveleft() {
+    if (i < slidecounter - 1) {
+        lele += 100;
+        i++;
+        container.style.transition = '.3s'
+        setTimeout('moveleft()', 3000);
+    } else {
+        container.style.transition = '0s'
+        lele = 0;
+        i = 0;
+        setTimeout('moveleft()', 0);
+    }
+
+    container.style.left = "-" + lele + "%";
+    
+}
+
+moveleft();
+
+</script>
+</body>
+</html>
